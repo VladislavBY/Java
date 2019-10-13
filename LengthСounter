@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class LengthСounter {
+    private Scanner scan = new Scanner(System.in);
+    private String text = scan.next();
+    private static int storage(String s){
+        return s.length()*16;
+    }
+    public static int let(String s){
+        return s.length();
+    }
+    private int bits = storage(text);
+    private int bytes = bits/8;
+    private int letter = let(text);
+    public LengthСounter(){
+        System.out.println("Letter = " + letter + " Bytes = "+ bytes +" Bits = " + bits );
+    }
+    public static void main(String[] args) {
+    new LengthСounter();
+    }
+}

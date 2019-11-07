@@ -1,0 +1,28 @@
+public class FractionsSum {
+    private int num, den;
+    private FractionsSum(int firstNumerator, int firstDenominator, int secondNumerator, int secondDenominator){
+       num = num(firstNumerator, firstDenominator, secondNumerator, secondDenominator);
+       den = den(firstDenominator, secondDenominator);
+       System.out.println(num + "/" + den);
+    }
+    private int num(int firstNumerator, int firstDenominator, int secondNumerator, int secondDenominator){
+        int numerator = (firstNumerator*secondDenominator) + (secondNumerator*firstDenominator);
+        return numerator;
+    }
+    private int den(int firstDenominator, int secondDenominator){
+       int denominator = firstDenominator*secondDenominator;
+       return denominator;
+    }
+    public static FractionsSum sum (int firstNumerator, int firstDenominator, int secondNumerator, int secondDenominator){
+        return new FractionsSum(firstNumerator, firstDenominator, secondNumerator, secondDenominator);
+    }
+    public int numerator (){
+        return this.num;
+    }
+    public int denominator (){
+        return this.den;
+    }
+    public String toString(){
+        return this.num + "/" + this.den;
+    }
+}
